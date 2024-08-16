@@ -11,6 +11,8 @@ function checkButton(e) {
 
   const resultEl = document.getElementById("result")
   resultEl.innerHTML = JSON.stringify(result, null, 2)
+  resultEl.removeAttribute('data-highlighted')
+  hljs.initHighlighting.called = false;
   hljs.highlightAll()
 }
 
