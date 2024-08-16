@@ -29,9 +29,12 @@ jobs:
       - name: Generate Tailwind CSS
         uses: ZoeyVid/tailwindcss-update@v1.4.0
         with:
-          input: input.css
-          output: output.css
+          input: ./input.css
+          output: ./output.css
           params: "--minify"
+      
+      - name: debug
+        run: ls
     
       - name: Build project
         run: npm run build
