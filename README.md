@@ -1,6 +1,6 @@
 # dai_validator.js
 
-Give it a stream URL with DAI params, and it converts it to JSON andd checks it against a schema using [JSON Schema](https://json-schema.org/).
+Give it a stream URL with DAI params, and it converts it to JSON and checks it against a schema using [JSON Schema](https://json-schema.org/).
 Currently the only schema is `muxip_needed.js`. More are planned.
 
 ## To use:
