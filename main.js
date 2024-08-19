@@ -11,11 +11,11 @@ try {
   setStatus("error", "error parsing schema")
 }
 
-var button = document.getElementById('checkButton').addEventListener('click', checkButton)
-var button = document.getElementById('btnGoodExample').addEventListener('click', btnGoodExample)
-var button = document.getElementById('btnBadExample').addEventListener('click', btnBadExample)
+document.getElementById('checkButton').addEventListener('click', btnCheckURL)
+document.getElementById('btnGoodExample').addEventListener('click', btnGoodExample)
+document.getElementById('btnBadExample').addEventListener('click', btnBadExample)
 
-function checkButton(e) {
+function btnCheckURL(e) {
   e.preventDefault()
   var url = null
   try {
@@ -106,4 +106,3 @@ async function btnBadExample(e) {
     document.getElementById('checkButton').click()
   } catch (e) { }
 }
-
