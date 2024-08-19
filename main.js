@@ -1,7 +1,15 @@
 import hljs from 'highlight.js';
-import { parse_muxip_needed } from './muxip_needed.js'
+import { parser } from '@exodus/schemasafe'
 import test_url_good_1 from './test_url_good_1.txt'
 import test_url_bad_1 from './test_url_bad_1.txt'
+import muxip_needed from './muxip_needed.json'
+
+var parse = null
+try {
+  parse = parser(muxip_needed, { includeErrors: true, allErrors: true, mode: "default" })
+} catch (e) {
+  setStatus("error", "error parsing schema")
+}
 
 var button = document.getElementById('checkButton').addEventListener('click', checkButton)
 var button = document.getElementById('btnGoodExample').addEventListener('click', btnGoodExample)
@@ -10,7 +18,6 @@ var button = document.getElementById('btnBadExample').addEventListener('click', 
 function checkButton(e) {
   e.preventDefault()
   var url = null
-  const resultEl = document.getElementById("result")
   try {
     url = new URL(document.getElementById("urlField").value)
   } catch (e) {
@@ -19,13 +26,8 @@ function checkButton(e) {
     return
   }
   clearStatus();
-
   const result = checkURL(url)
-
-  resultEl.textContent = JSON.stringify(result, null, 2)
-  resultEl.removeAttribute('data-highlighted')
-  hljs.initHighlighting.called = false;
-  hljs.highlightAll()
+  setResult(JSON.stringify(result, null, 2))
 
   if (result.valid) {
     setStatus("success", "DAI Parameters are all present and valid")
@@ -48,7 +50,15 @@ function checkURL(url) {
     }
   }
 
-  return parse_muxip_needed(JSON.stringify(urlParams))
+  return parse(JSON.stringify(urlParams))
+}
+
+function setResult(text) {
+  const resultEl = document.getElementById("result")
+  resultEl.textContent = text
+  resultEl.removeAttribute('data-highlighted')
+  hljs.initHighlighting.called = false;
+  hljs.highlightAll()
 }
 
 function setStatus(status, message) {
@@ -86,11 +96,4 @@ async function btnBadExample(e) {
     document.getElementById('checkButton').click()
   } catch (e) { }
 }
-
-// fetch('./test_url_good_1.txt')
-//   .then((response) => response.text().then((text) => {
-//     console.log(text)
-//   }));
-
-
 
