@@ -1,5 +1,7 @@
 import hljs from 'highlight.js';
 import { parse_muxip_needed } from './muxip_needed.js'
+import test_url_good_1 from './test_url_good_1.txt'
+import test_url_bad_1 from './test_url_bad_1.txt'
 
 var button = document.getElementById('checkButton').addEventListener('click', checkButton)
 var button = document.getElementById('btnGoodExample').addEventListener('click', btnGoodExample)
@@ -70,7 +72,7 @@ function clearStatus() {
 async function btnGoodExample(e) {
   e.preventDefault()
   try {
-    var text = await (await fetch('./test_url_good_1.txt')).text()
+    var text = await (await fetch(test_url_good_1)).text()
     document.getElementById('urlField').value = text
     document.getElementById('checkButton').click()
   } catch (e) { }
@@ -79,7 +81,7 @@ async function btnGoodExample(e) {
 async function btnBadExample(e) {
   e.preventDefault()
   try {
-    var text = await (await fetch('./test_url_bad_1.txt')).text()
+    var text = await (await fetch(test_url_bad_1)).text()
     document.getElementById('urlField').value = text
     document.getElementById('checkButton').click()
   } catch (e) { }
