@@ -152,7 +152,7 @@
         "ads.us_privacy": {
             "type": "string",
             "minLength": 1,
-            "pattern": "^.*$"
+            "pattern": "^\\d[YN\\-][YN\\-][YN\\-]$"
         }
     },
     "required": [
