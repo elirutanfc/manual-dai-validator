@@ -71,20 +71,119 @@
                 }
             ],
             "minLength": 1
+        },
+        "ads.app_version": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^.*$"
+        },
+        "ads.cb": {
+            "type": "integer"
+        },
+        "ads.channel_name": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^.*$"
+        },
+        "ads.content_episode": {
+            "type": "integer",
+            "minimum": 1
+        },
+        "ads.content_rating": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^.*$"
+        },
+        "ads.content_series": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^.*$"
+        },
+        "ads.content_title": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^.*$"
+        },
+        "ads.coppa": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1
+        },
+        "ads.custom_7": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^.*$"
+        },
+        "ads.device_type": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^.*$"
+        },
+        "ads.distributor_id": {
+            "type": "integer"
+        },
+        "ads.dnt": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1
+        },
+        "ads.dur": {
+            "type": "integer"
+        },
+        "ads.gdpr": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1
+        },
+        "ads.language": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^.*$"
+        },
+        "ads.pod_ad_slots": {
+            "type": "integer"
+        },
+        "ads.pod_max_dur": {
+            "type": "integer"
+        },
+        "ads.pod_min_dur": {
+            "type": "integer"
+        },
+        "ads.us_privacy": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^.*$"
         }
     },
     "required": [
-        "ads.did",
+        "ads.app_bundle",
         "ads.app_name",
         "ads.app_store_url",
-        "ads.app_bundle",
+        "ads.app_version",
+        "ads.cb",
+        "ads.channel_name",
+        "ads.content_episode",
         "ads.content_genre",
-        "ads.rating",
-        "ads.ua",
+        "ads.content_rating",
+        "ads.content_series",
+        "ads.content_title",
+        "ads.coppa",
+        "ads.custom_7",
+        "ads.device_type",
+        "ads.did",
+        "ads.distributor_id",
+        "ads.dnt",
+        "ads.dur",
+        "ads.gdpr",
         "ads.h",
-        "ads.w",
-        "ads.content_channel",
-        "ads.ic",
-        "ads.ip"
+        "ads.ip",
+        "ads.is_lat",
+        "ads.language",
+        "ads.pod_ad_slots",
+        "ads.pod_max_dur",
+        "ads.pod_min_dur",
+        "ads.ua",
+        "ads.us_privacy",
+        "ads.w"
     ]
 }
