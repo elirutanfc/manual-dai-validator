@@ -9,6 +9,7 @@ https://elirutanfc.github.io/manual-dai-validator
 ## To run in a development environment:
 ```
 npm i
+npx tailwindcss -i ./input.css -o ./output.css
 npx vite build
 npx vite preview
 ```
