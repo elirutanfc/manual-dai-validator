@@ -19,6 +19,7 @@ function checkButton(e) {
   e.preventDefault()
   var url = null
   try {
+    // grab url from field & parse it
     url = new URL(document.getElementById("urlField").value)
   } catch (e) {
     setStatus("error", "Invalid URL!")
@@ -26,17 +27,21 @@ function checkButton(e) {
     return
   }
   clearStatus();
-  const result = checkURL(url)
-  setResult(JSON.stringify(result, null, 2))
+  const urlParams = extractParams(url)
+  const result = checkURL(urlParams)
 
   if (result.valid) {
+    setResult(JSON.stringify(result, null, 2))
     setStatus("success", "DAI Parameters are all present and valid")
   } else {
+    // adding the jsonified url to the result because it doesn't do it when the result is invalid for some reason
+    setResult(JSON.stringify(result, null, 2) + "\n" + JSON.stringify(urlParams, null, 2))
     setStatus("error", "Problems found with DAI parameters:")
   }
 }
 
-function checkURL(url) {
+// takes the params from a URL object and converts them to json
+function extractParams(url) {
   const urlParams = Object.fromEntries(url.searchParams.entries());
 
   function isNumeric(value) {
@@ -50,6 +55,11 @@ function checkURL(url) {
     }
   }
 
+  return urlParams
+}
+
+// runs the parser on a jsonified set of URL parameters
+function checkURL(urlParams) {
   return parse(JSON.stringify(urlParams))
 }
 
