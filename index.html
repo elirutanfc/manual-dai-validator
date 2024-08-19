@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css">
+  <link href="./output.css" rel="stylesheet">
+  <title>Manual DAI Validator</title>
+  <script type="module" crossorigin src="/assets/index-DyN-jeqv.js"></script>
+</head>
+
+<body>
+  <div class="relative container mx-auto my-0 h-screen px-6 py-2 bg-blue-200 text-base">
+    <h1 class="text-lg">Manual DAI Validator</h1>
+    <form class="">
+      <input class="my-2 p-1 w-full rounded-md border-2 border-slate-400" id="urlField" type="textarea"
+        placeholder="url"></input>
+      <br>
+      <button class="my-2 p-1 w-2/12 bg-blue-500 hover:bg-blue-400 active:bg-blue-700 rounded-md" id="checkButton"
+        type="submit">Check
+        URL</button>
+    </form>
+
+    <pre><code class="json my-2" id="result"></code></pre>
+  </div>
+
+</body>
+
+</html>
