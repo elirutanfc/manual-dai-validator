@@ -26,15 +26,18 @@ jobs:
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
-      - name: Generate Tailwind CSS
-        uses: ZoeyVid/tailwindcss-update@v1.4.0
-        with:
-          input: ./input.css
-          output: ./output.css
-          params: "--minify"
+      # - name: Generate Tailwind CSS
+      #   uses: ZoeyVid/tailwindcss-update@v1.4.0
+      #   with:
+      #     input: ./input.css
+      #     output: ./output.css
+      #     params: "--minify"
       
-      - name: debug
-        run: ls
+      # - name: debug
+      #   run: ls -latr; ls -latr | wc -l
+
+      - name: Generate Tailwind CSS
+        run: npx tailwindcss -i ./input.css -o ./output.css --minify
     
       - name: Build project
         run: npm run build
