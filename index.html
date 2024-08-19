@@ -12,6 +12,9 @@
 <body>
   <div class="relative container mx-auto my-0 h-screen px-6 py-2 bg-blue-200 text-base">
     <h1 class="text-xl">Manual DAI Validator</h1>
+    <div>Give it a stream URL with DAI params, and it converts it to JSON and checks it against a schema using <a
+        href="https://json-schema.org/" class="text-blue-700 hover:text-blue-400 active:text-blue-700">JSON
+        Schema</a>. Currently the only schema is muxip_needed.js. More are planned.</div>
     <form class="">
       <input class="my-2 p-1 w-full rounded-md border-2 border-slate-400" id="urlField" type="textarea"
         placeholder="url"></input>
