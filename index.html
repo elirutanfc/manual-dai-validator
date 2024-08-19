@@ -6,20 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css">
   <title>Manual DAI Validator</title>
-  <script type="module" crossorigin src="./assets/index-GuoZuqSh.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BtC2zmET.css">
+  <script type="module" crossorigin src="./assets/index-ByfmL6XA.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BrXvyhxj.css">
 </head>
 
 <body>
   <div class="relative container mx-auto my-0 h-screen px-6 py-2 bg-blue-200 text-base">
-    <h1 class="text-xl">Manual DAI Validator</h1>
-    <div>Give it a stream URL with DAI params, and it converts it to JSON and checks it against a schema using <a
+    <h1 class="text-3xl pt-3 pb-2 font-semibold">Manual DAI Validator</h1>
+    <div>Paste a stream URL with DAI params here, and this tool will check it against a schema using <a
         href="https://json-schema.org/" class="text-blue-700 hover:text-blue-400 active:text-blue-700">JSON
-        Schema</a>. Currently the only schema is muxip_needed.js. More are planned.</div>
+        Schema</a>. Currently the only schema is <a
+        href="https://github.com/elirutanfc/manual-dai-validator/blob/master/muxip_needed.json"
+        class="text-blue-700 hover:text-blue-400 active:text-blue-700">muxip_needed.js</a>. More are planned.</div>
+    <h2 class="text-lg pt-3 font-semibold">Reading the results</h2>
+    <div>I plan to make these results more readable, but for now, mainly focus on the
+      <code class="rounded-md bg-blue-300 px-1 py-0.5">instanceLocation</code> field. It'll tell you which parameter has
+      a problem, then you can go from there. Ctrl+F is useful here.
+    </div>
     <form class="">
       <input class="my-2 p-1 w-full rounded-md border-2 border-slate-400" id="urlField" type="textarea"
         placeholder="url"></input>
-      <br>
       <button
         class="my-2 mr-4 p-1 w-2/12 bg-blue-500 hover:bg-blue-400 active:bg-blue-700 rounded-md transition-all duration-100"
         id="checkButton" type="submit">Check URL</button>
