@@ -6,22 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css">
   <title>Manual DAI Validator</title>
-  <script type="module" crossorigin src="./assets/index-C6F-pzT3.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-BPZqB4JY.css">
+  <script type="module" crossorigin src="./assets/index-CIgv5kGG.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BcfBIwp-.css">
 </head>
 
 <body>
   <div class="relative container mx-auto my-0 h-screen px-6 py-2 bg-blue-200 text-base">
-    <h1 class="text-lg">Manual DAI Validator</h1>
+    <h1 class="text-xl">Manual DAI Validator</h1>
     <form class="">
       <input class="my-2 p-1 w-full rounded-md border-2 border-slate-400" id="urlField" type="textarea"
         placeholder="url"></input>
       <br>
-      <button class="my-2 p-1 w-2/12 bg-blue-500 hover:bg-blue-400 active:bg-blue-700 rounded-md" id="checkButton"
-        type="submit">Check
-        URL</button>
+      <button
+        class="my-2 mr-4 p-1 w-2/12 bg-blue-500 hover:bg-blue-400 active:bg-blue-700 rounded-md transition-all duration-100"
+        id="checkButton" type="submit">Check URL</button>
+      <button
+        class="my-2 mr-4 p-1 w-2/12 bg-green-600 hover:bg-green-500 active:bg-green-700 rounded-md transition-all duration-100"
+        id="btnGoodExample" type="submit">Example URL (Good)</button>
+      <button
+        class="my-2 mr-4 p-1 w-2/12 bg-red-600 hover:bg-red-400 active:bg-red-700 rounded-md transition-all duration-100"
+        id="btnBadExample" type="submit">Example URL (Bad)</button>
     </form>
 
+    <div id="statusError" class="text-red-600 text-lg"></div>
+    <div id="statusSuccess" class="text-green-600 text-lg"></div>
     <pre><code class="json my-2" id="result"></code></pre>
   </div>
 
